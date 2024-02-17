@@ -6,16 +6,3 @@ try:
     conn.close()
 except Exception as e:
     print(f"Error connecting to database: {e}")
-
-
-dict = {services:
-        
-  {todo-app-backend:
-    image: todo},
-
-  {todo-app-frontend:
-    image: todo},
-    
-  {db:
-    image: postgres}
-}
