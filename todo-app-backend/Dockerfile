@@ -1,7 +1,7 @@
 # Using an official python runtime as the base image
 FROM python:alpine
 
-# Setting the working directory in the container
+# Setting the working directory in the container 
 WORKDIR /app
 
 ENV FLASK_APP=app.py
