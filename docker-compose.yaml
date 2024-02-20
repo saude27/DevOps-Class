@@ -8,10 +8,8 @@ services:
     image: todo-app-backend
     ports:
       - "5000:5000"
-    environment:
-      DATABASE_URL: postgresql://postgres:Jesus002@localhost:5432/todo_app
-      DB_HOST: db
-      DB_PORT: 5432
+    env_file:
+      - .env
     volumes:
       - ./todo-app-backend:/app
     depends_on:

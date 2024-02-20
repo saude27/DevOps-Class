@@ -17,3 +17,10 @@ spec:
         image: ifeoluwashola/todo-app:frontend_v2
         ports:
         - containerPort:  3000
+        resources:
+          requests:
+            cpu:  200m
+            memory:  128Mi
+          limits:
+            cpu:  500m
+            memory:  300Mi

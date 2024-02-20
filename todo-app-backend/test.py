@@ -1,5 +1,10 @@
 import psycopg2
-DATABASE_URL = 'postgres://postgres:Jesus002@localhost:5432/todo_app'
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 try:
     conn = psycopg2.connect(DATABASE_URL)
     print("Connected to database successfully!")
