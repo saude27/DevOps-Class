@@ -12,6 +12,7 @@ spec:
       labels:
         app: todo-app-db
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: todo-app-db
         image: postgres:latest

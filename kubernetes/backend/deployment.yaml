@@ -12,6 +12,7 @@ spec:
       labels:
         app: todo-app-backend
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: todo-app-backend
         image: ifeoluwashola/todo-app:backend_v2
