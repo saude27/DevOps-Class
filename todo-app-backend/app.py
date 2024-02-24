@@ -73,5 +73,10 @@ def create_db():
         db.create_all()
         print('Database and tables created!')
 
+# Healtcheck
+@app.route('/health')
+def health_check():
+    return jsonify(status='ok')
+
 if __name__ == '__main__':
     app.run(debug=True)

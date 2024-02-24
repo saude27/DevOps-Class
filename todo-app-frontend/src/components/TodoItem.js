@@ -2,7 +2,7 @@ import React from 'react';
 
 function TodoItem({ todo, onUpdate, onDelete }) {
   const handleToggle = () => {
-    fetch(`http://localhost:31382/api/todos/${todo.id}`, {
+    fetch(`http://localhost:5000/api/todos/${todo.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ completed: !todo.completed })

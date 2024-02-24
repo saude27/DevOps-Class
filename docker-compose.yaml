@@ -29,13 +29,11 @@ services:
       - todo-app-backend
 
   db:
-    image: postgres:latest
+    image: postgres:alpine
     ports:
       - "5432:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Jesus002
-      POSTGRES_DB: todo_app
+    env_file:
+      - ./.env
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:

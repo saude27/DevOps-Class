@@ -12,6 +12,8 @@ RUN pip install --no-cache-dir --trusted-host pypi.python.org --use-pep517 -r re
 
 COPY . .
 
+RUN chmod +x entrypoint.sh
+
 EXPOSE 5000
 
-CMD [ "flask", "run" ]
+CMD [ "./entrypoint.sh" ]
