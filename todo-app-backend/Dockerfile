@@ -17,8 +17,8 @@ RUN pip install --no-cache-dir --trusted-host pypi.python.org --use-pep517 -r re
 # Copying the rest of the application code
 COPY . .
 
-# Exposing the port that the app runs on
+RUN chmod +x entrypoint.sh
+
 EXPOSE 5000
 
-# Command to run the application
-CMD [ "flask", "run" ]
+CMD [ "./entrypoint.sh" ]

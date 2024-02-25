@@ -6,7 +6,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:31382/api/todos')
+    fetch('http://localhost:5000/api/todos')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -24,7 +24,7 @@ function App() {
   };
 
   const updateTodo = (id, completed) => {
-    fetch(`http://localhost:31382/api/todos/${id}`, {
+    fetch(`http://localhost:5000/api/todos/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ completed })
@@ -47,7 +47,7 @@ function App() {
   };
 
   const deleteTodo = (id) => {
-    fetch(`http://localhost:31382/api/todos/${id}`, { method: 'DELETE' })
+    fetch(`http://localhost:5000/api/todos/${id}`, { method: 'DELETE' })
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

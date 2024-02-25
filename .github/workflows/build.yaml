@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - devops-class
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:

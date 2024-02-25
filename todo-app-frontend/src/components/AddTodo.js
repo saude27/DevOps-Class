@@ -10,7 +10,7 @@ function AddTodo({ onAdd }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (text.trim()) {
-      fetch('http://localhost:31382/api/todos', {
+      fetch('http://localhost:5000/api/todos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text })
