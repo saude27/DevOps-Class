@@ -99,7 +99,7 @@ resource "aws_security_group" "allow_ssh" {
 }
 
 resource "aws_key_pair" "devop-class-ssh-key" {
-  key_name   = "deploy-key"
+  key_name   = "deploy-keys"
   public_key = file("~/.ssh/id_ed25519.pub")
 }
 
