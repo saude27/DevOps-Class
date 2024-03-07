@@ -5,6 +5,13 @@ terraform {
       version = "~> 5.0"
     }
   }
+  # backend "s3" {
+  #   bucket = "ife-devops-class-001"
+  #   region = "eu-west-2"
+  #   key = "terraform.tfstate"
+  #   dynamodb_table = "devop-class"
+  #   encrypt = true
+  # }
 }
 
 # Configure the AWS Provider
@@ -14,7 +21,7 @@ provider "aws" {
 
 # Create a VPC
 resource "aws_vpc" "devop-class-vpc" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.cidr_block
   tags = {
     Usage = "Demo"
   }
@@ -22,7 +29,7 @@ resource "aws_vpc" "devop-class-vpc" {
 
 resource "aws_subnet" "devop-class-subnet" {
   vpc_id     = aws_vpc.devop-class-vpc.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.subnet_cidr_block
 
   tags = {
     Usage = "Create EC2"
@@ -52,7 +59,7 @@ resource "aws_route_table_association" "a" {
 }
 
 resource "aws_security_group" "allow_ssh" {
-  name        = "Allow SSH"
+  name        = var.security_group_name
   description = "Allow SSH inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.devop-class-vpc.id
 
@@ -114,7 +121,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "devop-class-instance" {
   ami                         = data.aws_ami.ubuntu.id
-  instance_type               = "t3.micro"
+  instance_type               = var.instance_type
   key_name                    = aws_key_pair.devop-class-ssh-key.key_name
   vpc_security_group_ids      = [aws_security_group.allow_ssh.id]
   subnet_id                   = aws_subnet.devop-class-subnet.id

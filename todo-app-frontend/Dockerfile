@@ -1,3 +1,4 @@
+# Pull base image
 FROM node:20-alpine
 
 # Setting the working directory in the container
