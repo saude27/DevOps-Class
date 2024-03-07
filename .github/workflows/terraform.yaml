@@ -32,6 +32,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Setup SSH
+        run: |
+           mkdir -p $HOME/.ssh
+           echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519.pub
+       
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
