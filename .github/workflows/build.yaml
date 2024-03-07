@@ -42,8 +42,8 @@ jobs:
           escape_json: false
           quotepath: false
           files: |
-            todo-app-frontend/**
-            todo-app-backend/**
+            todo-app-frontend/
+            todo-app-backend/
         
   docker-build-and-push:
     if: needs.detect-changes.outputs.count > 0
