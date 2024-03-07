@@ -56,3 +56,7 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/master' && (github.event.pull_request.merged == true || github.event_name == 'push')
         run: terraform apply -auto-approve -var-file='var/dev.tfvars'
+
+      - name: Terraform Destroy
+        if: github.ref == 'refs/heads/master' && (github.event.pull_request.merged == true || github.event_name == 'push')
+        run: terraform destroy -auto-approve -var-file='var/dev.tfvars'
