@@ -54,5 +54,5 @@ jobs:
         run: terraform plan -var-file='var/dev.tfvars'
         
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/master' && (github.event.pull_request.merged == true || github.event_name == 'push')
+        if: github.ref == 'refs/heads/master'
         run: terraform apply -auto-approve -var-file='var/dev.tfvars'
