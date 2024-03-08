@@ -4,9 +4,7 @@ on:
     branches:
       - master
     paths:
-        Terraform
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
+        Terraform/
 
 jobs:
   sonarcloud:
