@@ -1,3 +1,4 @@
+# Pull base image
 FROM node:20-alpine
 
 # Setting the working directory in the container
@@ -6,6 +7,7 @@ WORKDIR /app
 # Copying package.json and package-lock.json to the working directory
 COPY package.json .
 COPY package-lock.json .
+
 
 # Installing dependencies 
 RUN npm install
