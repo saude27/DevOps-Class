@@ -3,9 +3,8 @@ on:
   push:
     branches:
       - master
-      - devops-class
     paths:
-        Terraform/
+        Terraform
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
