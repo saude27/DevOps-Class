@@ -21,4 +21,4 @@ RUN chmod +x entrypoint.sh
 
 EXPOSE 5000
 
-CMD [ "./entrypoint.sh" ]
+CMD ["flask", "run"]

@@ -7,14 +7,51 @@
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+
 services:
-  server:
+  todo-app-backend:
     build:
-      context: .
-    environment:
-      NODE_ENV: production
+      context: ./todo-app-backend
+      dockerfile: Dockerfile
+    image: todo-app-backend
     ports:
-      - 5000:5000
+      - "5000:5000"
+    # env_file:
+    #   - .env
+    volumes:
+      - ./todo-app-backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+
+  todo-app-frontend:
+    build:
+      context: ./todo-app-frontend
+      dockerfile: Dockerfile
+    image: todo-app-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./todo-app-frontend:/app
+    depends_on:
+      - todo-app-backend
+
+  # db:
+  #   image: postgres:alpine
+  #   ports:
+  #     - "5432:5432"
+  #   env_file:
+  #     - ./.env
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+  #   healthcheck:
+  #     test: ["CMD", "pg_isready", "-U", "postgres"]
+  #     interval:  30s
+  #     timeout:  30s
+  #     retries:  3
+
+volumes:
+  pgdata:
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
