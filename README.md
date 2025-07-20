@@ -34,6 +34,7 @@ Service Orchestration
 Runs all necessary services (frontend, backend, and optional database) together with a single command:
 
 docker-compose up --build
+
 Inter-Container Networking
 Services communicate over a shared Docker network using container names (e.g., frontend calls backend via http://backend:5000).
 
