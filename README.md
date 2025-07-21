@@ -1,8 +1,10 @@
 Hajarat Busola Akande
+
+
 Project Overview
 This project is a full-stack To-Do Application built with a focus on modern DevOps practices, containerization, and automation. It leverages Docker, Docker Compose, GitHub Actions, Kubernetes, and Terraform to streamline development, deployment, and infrastructure management.
 
-🚀 Key Features
+ Key Features
 Frontend & Backend Dockerization
 The application is split into two services: a frontend (React) and a backend (Node.js/Express), each containerized for consistency across environments.
 
@@ -21,7 +23,7 @@ Kubernetes manifests are available for deploying the application in a production
 Code Quality Assurance
 Integrated static code analysis via SonarQube using the sonar-project.properties file.
 
-🐳 Docker Compose
+ Docker Compose
 To simplify local development and testing, the project uses Docker Compose to orchestrate multiple containers (frontend, backend, and optionally a database) in a single development environment.
 
 🔧 What It Does
