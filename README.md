@@ -26,7 +26,7 @@ Integrated static code analysis via SonarQube using the sonar-project.properties
  Docker Compose
 To simplify local development and testing, the project uses Docker Compose to orchestrate multiple containers (frontend, backend, and optionally a database) in a single development environment.
 
-🔧 What It Does
+ What It Does
 Docker Compose enables:
 
 Custom Image Builds
@@ -61,6 +61,8 @@ git clone https://github.com/Hajixhayjhay/DevOps-Class.git
 Run the App
 
 docker-compose up --build
+docker-compose up -d 
+
 Access the Services through
 
 Frontend: http://localhost:3000
