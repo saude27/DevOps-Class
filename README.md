@@ -61,7 +61,7 @@ git clone https://github.com/Hajixhayjhay/DevOps-Class.git
 Run the App
 
 docker-compose up --build
-Access the Services
+Access the Services through
 
 Frontend: http://localhost:3000
 
