@@ -61,6 +61,7 @@ git clone https://github.com/Hajixhayjhay/DevOps-Class.git
 Run the App
 
 docker-compose up --build
+
 docker-compose up -d
 
 Access the Services
