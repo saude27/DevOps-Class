@@ -53,7 +53,7 @@ Ensures containers start in the correct order using depends_on.
 Consistent Dev Environment
 Removes the need to install dependencies locally. Developers can code, test, and debug directly in containers.
 
- Getting Started with Docker Compose
+Getting Started with Docker Compose
 Clone the Repository
 
 git clone https://github.com/Hajixhayjhay/DevOps-Class.git
@@ -61,6 +61,7 @@ git clone https://github.com/Hajixhayjhay/DevOps-Class.git
 Run the App
 
 docker-compose up --build
+
 docker-compose up -d 
 
 Access the Services through
