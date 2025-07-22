@@ -1,72 +1,95 @@
-Hajarat Busola Akande
+# To-Do Application – DevOps Project
 
+**Author:** *Saudat Bada-Akande*
 
-Project Overview
-This project is a full-stack To-Do Application built with a focus on modern DevOps practices, containerization, and automation. It leverages Docker, Docker Compose, GitHub Actions, Kubernetes, and Terraform to streamline development, deployment, and infrastructure management.
+## 📌 Project Overview
 
- Key Features
-Frontend & Backend Dockerization
-The application is split into two services: a frontend (React) and a backend (Node.js/Express), each containerized for consistency across environments.
+This is a full-stack **To-Do Application** designed with a strong emphasis on modern **DevOps practices**, **containerization**, and **automation**. The project utilizes **Docker**, **Docker Compose**, **GitHub Actions**, **Kubernetes**, and **Terraform** to streamline the development workflow, deployment pipeline, and infrastructure provisioning.
 
-Docker Compose for Local Development
-Easily spin up the entire application with one command using docker-compose.yaml.
+---
 
-CI/CD with GitHub Actions
-Automated workflows located in .github/workflows handle code building, testing, and deployment.
+## 🚀 Key Features
 
-Infrastructure as Code (IaC) with Terraform
-Cloud infrastructure is managed declaratively using Terraform.
+### 🔧 Frontend & Backend Containerization
 
-Kubernetes Deployment
-Kubernetes manifests are available for deploying the application in a production-grade environment. Service account tokens are securely handled with automountServiceAccountToken: false.
+* The application is split into two main services:
 
-Code Quality Assurance
-Integrated static code analysis via SonarQube using the sonar-project.properties file.
+  * **Frontend**: React
+  * **Backend**: Node.js with Express
+* Each service is containerized to ensure consistency across environments.
 
- Docker Compose
-To simplify local development and testing, the project uses Docker Compose to orchestrate multiple containers (frontend, backend, and optionally a database) in a single development environment.
+### 🐳 Docker Compose for Local Development
 
- What It Does
-Docker Compose enables:
+* Use a single command to spin up the entire stack, including frontend, backend, and optionally a database.
+* Configured via `docker-compose.yaml`.
 
-Custom Image Builds
-Builds Docker images for both frontend and backend services using their respective Dockerfiles.
+### 🔁 CI/CD with GitHub Actions
 
-Service Orchestration
-Runs all necessary services (frontend, backend, and optional database) together with a single command:
+* Automated workflows in `.github/workflows/` handle:
 
+  * Code building
+  * Testing
+  * Deployment
+
+### ☁️ Infrastructure as Code (IaC) with Terraform
+
+* Cloud infrastructure is provisioned and managed declaratively using **Terraform**.
+
+### ☸️ Kubernetes Deployment
+
+* Kubernetes manifests are provided for deploying the application to a production-grade cluster.
+* Secure configurations include `automountServiceAccountToken: false` to enhance security.
+
+### ✅ Code Quality Assurance
+
+* Integrated **static code analysis** using **SonarQube** via the `sonar-project.properties` configuration.
+
+---
+
+## 🐳 Docker Compose Setup
+
+### What Docker Compose Does
+
+* **Builds custom Docker images** for frontend and backend services using individual Dockerfiles.
+* **Orchestrates services** to run in a shared environment:
+
+  ```bash
+  docker-compose up --build
+  ```
+* **Enables inter-container communication** using service names (e.g., `http://backend:5000`).
+* **Maps container ports** to localhost for easy access:
+
+  * Frontend: [http://localhost:3000](http://localhost:3000)
+  * Backend API: [http://localhost:5000](http://localhost:5000)
+* **Manages startup order** with `depends_on` to ensure services start in the correct sequence.
+* **Creates a consistent development environment**, removing the need for local dependency installation.
+
+---
+
+## 🏁 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/saude27/DevOps-Class.git
+cd DevOps-Class
+```
+
+### 2️⃣ Run the Application
+
+```bash
+# Build and start services
 docker-compose up --build
 
-Inter-Container Networking
-Services communicate over a shared Docker network using container names (e.g., frontend calls backend via http://backend:5000).
-
-Port Mapping for Access
-Maps container ports to localhost:
-
-Frontend: http://localhost:3000
-
-Backend API: http://localhost:5000
-
-Startup Dependency Management
-Ensures containers start in the correct order using depends_on.
-
-Consistent Dev Environment
-Removes the need to install dependencies locally. Developers can code, test, and debug directly in containers.
-
-Getting Started with Docker Compose
-Clone the Repository
-
-git clone https://github.com/Hajixhayjhay/DevOps-Class.git
-
-Run the App
-
-docker-compose up --build
-
+# Alternatively, run in detached mode
 docker-compose up -d
+```
 
-Access the Services
+### 3️⃣ Access the Services
 
-Frontend: http://localhost:3000
+* Frontend: [http://localhost:3000](http://localhost:3000)
+* Backend API: [http://localhost:5000](http://localhost:5000)
 
-Backend: http://localhost:5000
+
+
 
